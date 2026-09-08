@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <title>Lotería Boyacá | Colombia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="casino-glow glow-one"></div>
+  <div class="casino-glow glow-two"></div>
+  <div class="floating-decor decor-one">🍀</div>
+  <div class="floating-decor decor-two">🎰</div>
+  <div class="floating-decor decor-three">🃏</div>
+  <div class="floating-decor decor-four">💰</div>
+
+  <header class="hero">
+    <div class="top-badge"><span>🇨🇴</span> LOTERÍA BOYACÁ</div>
+    <div class="country-label">COLOMBIA 🇨🇴</div>
+
+    <h1>COMPRA TU <span>BOLETO</span></h1>
+    <p class="tagline">🍀 Elige tus números de la suerte y participa por un gran premio 🚙✨</p>
+
+    <div class="trust-row">
+      <span>🍀 SUERTE</span>
+      <span>🎱 BALOTO</span>
+      <span>🎰 NÚMEROS DE LA SUERTE</span>
+      <span>🇨🇴 COLOMBIA</span>
+    </div>
+
+    <div class="prize-card">
+      <div class="prize-copy">
+        <div class="mini-label">🏆 PREMIO PRINCIPAL</div>
+        <h2>¡GANA ESTE PREMIO!</h2>
+        <p>Selecciona tus números disponibles y revisa el valor de tu selección antes de continuar.</p>
+        <div class="lucky-pills">
+          <span>🍀 Buena suerte</span>
+          <span>🎲 Tu número</span>
+        </div>
+      </div>
+      <div class="prize-photo">
+        <div class="photo-placeholder">
+          <img class="prize-image" src="premio.jpg" alt="Foto del premio"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <div class="photo-fallback">
+            <span>🚙</span>
+            <b>AQUÍ VA LA FOTO<br>DEL PREMIO</b>
+            <small>Sube tu archivo como premio.jpg en la misma carpeta de index.html</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offers">
+      <div class="offer">
+        <small>🎟️ 1 BOLETO</small>
+        <strong>$50.000 COP</strong>
+      </div>
+      <div class="offer featured">
+        <small>🔥 PROMOCIÓN ESPECIAL</small>
+        <strong>3 BOLETOS · $100.000 COP</strong>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><strong>10.000</strong><span>NÚMEROS TOTALES</span></div>
+      <div><strong id="availableCount">6.000</strong><span>DISPONIBLES</span></div>
+      <div><strong id="blockedCount">4.000</strong><span>NO DISPONIBLES</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="payment-box">
+      <div class="payment-title">💳 DATOS PARA EL PAGO</div>
+      <div class="payment-content">
+        <div class="nequi-card">
+          <span class="nequi-icon">N</span>
+          <div>
+            <small>NEQUI</small>
+            <strong id="nequiNumber">310 837 6859</strong><small id="nequiName">Islia Rodríguez</small>
+          </div>
+        </div>
+        <button class="whatsapp-btn" id="whatsappBtn">📲 ENVIAR COMPROBANTE POR WHATSAPP</button>
+      </div>
+      <p class="edit-note">Pago por Nequi a nombre de <b>Islia Rodríguez</b>.</p>
+    </section>
+
+    <section class="legal-note">
+      <span>🍀</span>
+      <div>
+        <b>Información de referencia</b>
+        <p>La mención de Lotería de Boyacá, Baloto o cualquier autorización debe corresponder a una autorización real y verificable del organizador antes de publicar el sorteo.</p>
+      </div>
+    </section>
+
+    <section class="legend">
+      <div><span class="dot available"></span> Disponible</div>
+      <div><span class="dot unavailable"></span> No disponible</div>
+      <div><span class="dot selected-dot"></span> Seleccionado</div>
+      <div class="selected-info">🎯 Seleccionados: <b id="selectedCount">0</b></div>
+    </section>
+
+    <section class="number-panel">
+      <div class="panel-title">
+        <div class="panel-kicker">🍀 TABLERO DE LA SUERTE 🍀</div>
+        <h2>🎰 ELIGE TUS NÚMEROS</h2>
+        <p>Los números están organizados del 0001 al 10000.</p>
+      </div>
+      <div id="numbers" class="numbers-grid"></div>
+    </section>
+
+    <section class="purchase">
+      <div class="ticket-icon">🎟️</div>
+      <h2>TUS NÚMEROS SELECCIONADOS</h2>
+      <p id="selectedText">Aún no has seleccionado números.</p>
+
+      <div class="price-summary" id="priceSummary">
+        <span>💰 TOTAL A PAGAR</span>
+        <strong id="totalPrice">$0 COP</strong>
+      </div>
+
+      <p class="promo-hint">🔥 1 boleto: <b>$50.000</b> · 3 boletos: <b>$100.000</b></p>
+
+      <button id="clearBtn" class="secondary">Limpiar selección</button>
+      <button id="reserveBtn" class="primary" disabled>💳 PAGAR — $0 COP</button>
+      <p class="notice">La selección es una demostración visual. Conecta tu sistema real de reservas/pagos antes de publicar.</p>
+    </section>
+  </main>
+
+  <aside class="sticky-checkout" id="stickyCheckout" aria-live="polite">
+    <div class="sticky-info">
+      <span class="sticky-kicker">🎟️ TU SELECCIÓN</span>
+      <strong id="stickyNumbers">Selecciona tus números</strong>
+      <small><span id="stickyCount">0</span> números · <b id="stickyTotal">$0 COP</b></small>
+    </div>
+    <button class="primary sticky-pay" id="stickyPayBtn" type="button" disabled>💳 PAGAR</button>
+  </aside>
+
+  <div class="payment-modal" id="paymentModal" aria-hidden="true">
+    <div class="payment-modal-backdrop" id="paymentModalBackdrop"></div>
+    <div class="payment-modal-card" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle">
+      <button class="modal-close" id="closePaymentModal" aria-label="Cerrar">×</button>
+      <div class="modal-icon">💳</div>
+      <h2 id="paymentModalTitle">REALIZA TU PAGO</h2>
+      <p class="modal-subtitle">Confirma tus números y realiza el pago por Nequi.</p>
+
+      <div class="modal-order">
+        <div><span>NÚMEROS</span><strong id="modalNumbers">—</strong></div>
+        <div><span>CANTIDAD</span><strong id="modalCount">0</strong></div>
+        <div class="modal-total"><span>TOTAL A PAGAR</span><strong id="modalTotal">$0 COP</strong></div>
+      </div>
+
+      <div class="modal-nequi">
+        <span class="nequi-icon">N</span>
+        <div><small>PAGA POR NEQUI</small><strong id="modalNequi">310 837 6859</strong><small id="modalNequiName">Islia Rodríguez</small></div>
+      </div>
+
+      <div class="payment-steps">
+        <p>1️⃣ Envía el valor exacto mostrado arriba.</p>
+        <p>2️⃣ Guarda el comprobante de pago.</p>
+        <p>3️⃣ Pulsa el botón y envíalo por WhatsApp.</p>
+      </div>
+
+      <button class="whatsapp-btn modal-whatsapp" id="modalWhatsappBtn">📲 ENVIAR COMPROBANTE POR WHATSAPP</button>
+      <p class="modal-note">El botón de WhatsApp abre un mensaje con tus números y el valor total para facilitar el envío del comprobante.</p>
+    </div>
+  </div>
+
+  <footer>🍀 LOTERÍA BOYACÁ · COLOMBIA 🇨🇴 · 2026</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
