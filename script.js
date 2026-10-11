@@ -3,8 +3,8 @@
 // ===============================
 const WHATSAPP = "573216513686"; // WhatsApp de atención, sin + ni espacios
 const X_URL = "https://x.com/"; // Sustituye por la cuenta oficial si existe
-const NEQUI = "3023917993";    // Número Nequi
-const NEQUI_NAME = "Jefferson Peñaranda";
+const BANCOLOMBIA = "29700056307";    // Número Nequi
+const NEQUI_NAME = "Emeli Rodriguez";
 // ===============================
 
 const TOTAL = 10000;
