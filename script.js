@@ -1,7 +1,7 @@
 // ===============================
 // CONFIGURACIÓN: CAMBIA ESTOS DATOS
 // ===============================
-const WHATSAPP = "573216513686"; // WhatsApp de atención, sin + ni espacios
+const WHATSAPP = "573161976350"; // WhatsApp de atención, sin + ni espacios
 const X_URL = "https://x.com/"; // Sustituye por la cuenta oficial si existe
 const BANK_NAME = "Bancolombia";
 const ACCOUNT_HOLDER = "Emeli Rodríguez";
