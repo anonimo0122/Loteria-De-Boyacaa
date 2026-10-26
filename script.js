@@ -4,8 +4,8 @@
 const WHATSAPP = "573216513686"; // WhatsApp de atención, sin + ni espacios
 const X_URL = "https://x.com/"; // Sustituye por la cuenta oficial si existe
 const BANK_NAME = "Bancolombia";
-const ACCOUNT_HOLDER = "Emeli Rodríguez";
-const ACCOUNT_NUMBER = "29700056307";
+const ACCOUNT_HOLDER = "Islia Rodriguez";
+const ACCOUNT_NUMBER = "3108376859";
 const ACCOUNT_TYPE = "Ahorros";
 const PAYMENT_KEY = "Llave Bre-B";
 // ===============================
